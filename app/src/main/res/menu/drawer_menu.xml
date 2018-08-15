@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <group android:checkableBehavior="single">
+        <item android:id="@+id/thu"
+            android:title="Khoan Thu"
+            android:icon="@drawable/ic_khoangthu"
+            >
+        </item>
+        <item android:id="@+id/chi"
+            android:title="Khoan Chi"
+            android:icon="@drawable/ic_khoangchi"
+            >
+        </item>
+        <item android:id="@+id/thongke"
+            android:title="Thong Ke"
+            android:icon="@drawable/ic_thongke"
+            >
+        </item>
+        <item android:title="">
+            <menu>
+                <item android:id="@+id/sub1"
+                    android:title="About"
+                    android:icon="@drawable/ic_gioithieu"
+                    >
+                </item>
+                <item android:id="@+id/sub2"
+                    android:title="Exit"
+                    android:icon="@drawable/ic_out"
+                    >
+                </item>
+
+            </menu>
+        </item>
+    </group>
+</menu>
