@@ -14,7 +14,8 @@ public class Dbhelper extends SQLiteOpenHelper {
         String sql= "create table khoanthu " +
                 "(" +
                 "_id integer primary key autoincrement, " +
-                "khoanthu text " +
+                "khoanthu text, " +
+                "loaithu text " +
                 ")";
         db.execSQL(sql);
         String sql2= "create table loaithu " +
@@ -32,7 +33,8 @@ public class Dbhelper extends SQLiteOpenHelper {
         String sql4= "create table khoanchi " +
                 "( " +
                 "_id integer primary key autoincrement, " +
-                "khoanchi text " +
+                "khoanchi text, " +
+                "loaichi text " +
                 ")";
         db.execSQL(sql4);
     }

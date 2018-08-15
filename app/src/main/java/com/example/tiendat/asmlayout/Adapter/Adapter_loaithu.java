@@ -11,24 +11,21 @@ import com.example.tiendat.asmlayout.MainActivity;
 import com.example.tiendat.asmlayout.Model.Oloaichi;
 import com.example.tiendat.asmlayout.Model.Oloaithu;
 import com.example.tiendat.asmlayout.R;
-import com.example.tiendat.asmlayout.SQLite.LoaichiDAO;
 
 import java.util.ArrayList;
 
-public class Adapter_spinner extends BaseAdapter {
+public class Adapter_loaithu extends BaseAdapter {
     Context context;
-    ArrayList<Oloaichi> lc = new ArrayList<>();
-ArrayList<Oloaithu> lt = new ArrayList<>();
+    ArrayList<Oloaithu> lt = new ArrayList<>();
 
-    public Adapter_spinner(Context context, ArrayList<Oloaichi> lc) {
+    public Adapter_loaithu(Context context, ArrayList<Oloaithu> lt) {
         this.context = context;
-        this.lc = lc;
+        this.lt = lt;
     }
-
 
     @Override
     public int getCount() {
-        return lc.size();
+        return lt.size();
     }
 
     @Override
@@ -43,11 +40,11 @@ ArrayList<Oloaithu> lt = new ArrayList<>();
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
-        LayoutInflater inf =((MainActivity)context).getLayoutInflater();
-        convertView =inf.inflate(R.layout.spinner,null);
-        TextView ten=convertView.findViewById(R.id.tenthuoctinh);
-        Oloaichi oloaichi =lc.get(position);
-        ten.setText(oloaichi.tenloaichi);
+        LayoutInflater inf = ((MainActivity)context).getLayoutInflater();
+        convertView =inf.inflate(R.layout.item_loaichi,null);
+        TextView tvloaichi=convertView.findViewById(R.id.tvloaichi);
+        Oloaithu oloaithu =lt.get(position);
+        tvloaichi.setText(oloaithu.tenloaithu);
         return convertView;
     }
 }

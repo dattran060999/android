@@ -11,24 +11,21 @@ import com.example.tiendat.asmlayout.MainActivity;
 import com.example.tiendat.asmlayout.Model.Oloaichi;
 import com.example.tiendat.asmlayout.Model.Oloaithu;
 import com.example.tiendat.asmlayout.R;
-import com.example.tiendat.asmlayout.SQLite.LoaichiDAO;
 
 import java.util.ArrayList;
 
-public class Adapter_spinner extends BaseAdapter {
+public class Adapter_spinner2 extends BaseAdapter {
     Context context;
-    ArrayList<Oloaichi> lc = new ArrayList<>();
-ArrayList<Oloaithu> lt = new ArrayList<>();
+    ArrayList<Oloaithu> lt = new ArrayList<>();
 
-    public Adapter_spinner(Context context, ArrayList<Oloaichi> lc) {
+    public Adapter_spinner2(Context context, ArrayList<Oloaithu> lt) {
         this.context = context;
-        this.lc = lc;
+        this.lt = lt;
     }
-
 
     @Override
     public int getCount() {
-        return lc.size();
+        return lt.size();
     }
 
     @Override
@@ -46,8 +43,8 @@ ArrayList<Oloaithu> lt = new ArrayList<>();
         LayoutInflater inf =((MainActivity)context).getLayoutInflater();
         convertView =inf.inflate(R.layout.spinner,null);
         TextView ten=convertView.findViewById(R.id.tenthuoctinh);
-        Oloaichi oloaichi =lc.get(position);
-        ten.setText(oloaichi.tenloaichi);
+        Oloaithu oloaithu =lt.get(position);
+        ten.setText(oloaithu.tenloaithu);
         return convertView;
     }
 }

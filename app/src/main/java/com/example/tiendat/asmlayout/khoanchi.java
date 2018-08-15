@@ -2,21 +2,16 @@ package com.example.tiendat.asmlayout;
 
 
 import android.app.Dialog;
-import android.content.Context;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.TextInputEditText;
-import android.support.design.widget.TextInputLayout;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.Spinner;
-import android.widget.TextView;
-import android.widget.Toast;
 
 import com.example.tiendat.asmlayout.Adapter.Adapter_khoanchi;
 import com.example.tiendat.asmlayout.Adapter.Adapter_spinner;
@@ -58,17 +53,19 @@ ListView listView;
                 Button dialogButton = (Button) dialog.findViewById(R.id.button3);
                 final TextInputEditText text = dialog.findViewById(R.id.loaithu);
                 final Spinner sp2 =dialog.findViewById(R.id.sp);
+                LoaichiDAO loaichiDAO = new LoaichiDAO(getActivity());
+                lc=loaichiDAO.xemloaichi();
+                Adapter_spinner adapter_spinner = new Adapter_spinner(getActivity(),lc);
+                sp2.setAdapter(adapter_spinner);
                 dialogButton.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
+                        int s=sp2.getSelectedItemPosition();
                         String tenkhoanchi = text.getText().toString();
-                        Okhoanchi okhoanchi = new Okhoanchi(tenkhoanchi);
+                        String loaichi=lc.get(s).tenloaichi;
+                        Okhoanchi okhoanchi = new Okhoanchi(tenkhoanchi,loaichi);
                         KhoanchiDAO khoanchidao = new KhoanchiDAO(getActivity());
                         khoanchidao.themkhoanchi(okhoanchi);
-                        LoaichiDAO loaichiDAO = new LoaichiDAO(getActivity());
-                        lc=loaichiDAO.xemloaichi();
-                        Adapter_spinner adapter_spinner = new Adapter_spinner(getActivity(),lc);
-                        sp2.setAdapter(adapter_spinner);
                         capnhaths();
                         dialog.cancel();
                     }
@@ -82,9 +79,7 @@ return view;
     public void capnhaths(){
         KhoanchiDAO kcdao = new KhoanchiDAO(getActivity());
         kc=kcdao.xemkhoanchi();
-        LoaichiDAO lcdao = new LoaichiDAO(getActivity());
-        lc=lcdao.xemloaichi();
-        Adapter_khoanchi adapter_khoanchi = new Adapter_khoanchi(getActivity(),kc,lc);
+        Adapter_khoanchi adapter_khoanchi = new Adapter_khoanchi(getActivity(),kc);
         listView.setAdapter(adapter_khoanchi);
     }
 }

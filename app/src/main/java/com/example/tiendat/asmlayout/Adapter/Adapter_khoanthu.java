@@ -10,23 +10,24 @@ import android.widget.TextView;
 
 import com.example.tiendat.asmlayout.MainActivity;
 import com.example.tiendat.asmlayout.Model.Okhoanchi;
+import com.example.tiendat.asmlayout.Model.Okhoanthu;
 import com.example.tiendat.asmlayout.Model.Oloaichi;
 import com.example.tiendat.asmlayout.R;
-import com.example.tiendat.asmlayout.SQLite.KhoanchiDAO;
 
 import java.util.ArrayList;
 
-public class Adapter_khoanchi extends BaseAdapter {
+public class Adapter_khoanthu extends BaseAdapter {
     Context context;
-    ArrayList<Okhoanchi> kc = new ArrayList<>();
-    ArrayList<Oloaichi> lc = new ArrayList<>();
-    public Adapter_khoanchi(Context context, ArrayList<Okhoanchi> kc) {
+   ArrayList<Okhoanthu> kt= new ArrayList<>();
+
+    public Adapter_khoanthu(Context context, ArrayList<Okhoanthu> kt) {
         this.context = context;
-        this.kc = kc;
+        this.kt = kt;
     }
+
     @Override
     public int getCount() {
-        return kc.size();
+        return kt.size();
     }
 
     @Override
@@ -47,19 +48,9 @@ public class Adapter_khoanchi extends BaseAdapter {
         TextView tex2 =convertView.findViewById(R.id.tv2);
         ImageView del=convertView.findViewById(R.id.delete);
         ImageView edit =convertView.findViewById(R.id.edit);
-        final Okhoanchi okhoanchi =kc.get(position);
-        tex.setText(okhoanchi.tenkhoanchi);
-        tex2.setText(okhoanchi.loaichi);
-del.setOnClickListener(new View.OnClickListener() {
-    @Override
-    public void onClick(View v) {
-        int id =okhoanchi._id;
-        KhoanchiDAO khoanchiDAO = new KhoanchiDAO((MainActivity)context);
-        khoanchiDAO.xoa(id);
-    }
-});
-        //hien khoan chi
-
+        final Okhoanthu okhoanthu = kt.get(position);
+        tex.setText(okhoanthu.tenkhoanthu);
+        tex2.setText(okhoanthu.loaithu);
         return convertView;
     }
 }

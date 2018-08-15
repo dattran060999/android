@@ -19,6 +19,7 @@ public class KhoanchiDAO {
         db = dbhelper.getWritableDatabase();
         ContentValues values = new ContentValues();
         values.put("khoanchi",okhoanchi.tenkhoanchi);
+        values.put("loaichi",okhoanchi.loaichi);
         db.insert("khoanchi", null, values);
     }
     public ArrayList<Okhoanchi>  xemkhoanchi(){
@@ -29,10 +30,22 @@ public class KhoanchiDAO {
             do {
                 int _id = c.getInt(0);
                 String tenkhoanchi = c.getString(1);
-                Okhoanchi sv = new Okhoanchi(tenkhoanchi,_id);
+                String loaichi=c.getString(2);
+                Okhoanchi sv = new Okhoanchi(tenkhoanchi,loaichi,_id);
                 kc.add(sv);
             } while (c.moveToNext());
         }
         return kc;
     }
+    public void xoa(int _id){
+        db=dbhelper.getWritableDatabase();
+        db.delete("khoanchi","_id=?",new String[]{_id+""});
+    }
+//    public void sualophoc(Okhoanchi okhoanchi){
+//        db=dbhelper.getWritableDatabase();
+//        ContentValues values = new ContentValues();
+//        values.put("tenlop",okhoanchi.tenkhoanchi);
+//        db.update("lophoc",values,"_id=?",new String []{okhoanchi._id+""});
+//
+//    }
 }

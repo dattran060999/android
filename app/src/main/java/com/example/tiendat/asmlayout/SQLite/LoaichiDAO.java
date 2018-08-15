@@ -36,4 +36,15 @@ public class LoaichiDAO {
         }
         return lc;
     }
+    public void xoa(int _id){
+        db=dbhelper.getWritableDatabase();
+        db.delete("loaichi","_id=?",new String[]{_id+""});
+    }
+    public void sua(Oloaichi oloaichi){
+        db=dbhelper.getWritableDatabase();
+        ContentValues values = new ContentValues();
+        values.put("loaichi",oloaichi.tenloaichi);
+        db.update("loaichi",values,"_id=?",new String []{oloaichi._id+""});
+
+    }
 }
