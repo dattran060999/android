@@ -87,7 +87,7 @@ public class khoanthu extends Fragment {
     public void capnhaths(){
         KhoanthuDAO khoanthuDAO = new KhoanthuDAO(getActivity());
         kt=khoanthuDAO.xemkhoanthu();
-        Adapter_khoanthu adapter_khoanchi = new Adapter_khoanthu(getActivity(),kt);
+        Adapter_khoanthu adapter_khoanchi = new Adapter_khoanthu(getActivity(),kt,khoanthu.this);
         listView4.setAdapter(adapter_khoanchi);
     }
 

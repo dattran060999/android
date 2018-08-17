@@ -1,6 +1,6 @@
 <resources>
     <string name="app_name">Quan Li Thu Chi</string>
-
+    <string name="about">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad assumenda consequuntur cupiditate expedita, laborum molestias optio quia tempore temporibus voluptatem. Cumque dolor ipsa minima quasi repudiandae sequi suscipit totam vel! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam culpa dolorum, eaque eius enim esse eveniet laboriosam laudantium modi nisi nostrum provident qui quos sunt suscipit? Aspernatur odio perferendis sunt! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium aut consequatur dignissimos est eum excepturi expedita fugit laborum nesciunt nihil officia officiis quaerat, quibusdam quisquam repudiandae velit, voluptas voluptate voluptatum. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Distinctio et eum expedita, facere fuga inventore ipsa ipsam iste nemo officia placeat porro provident quos rem sequi similique sunt tempora tenetur.  </string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

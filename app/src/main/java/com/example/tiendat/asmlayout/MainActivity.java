@@ -60,7 +60,12 @@ NavigationView nav;
             classfragment = fragment_chi.class;
         if (id == R.id.thongke)
             classfragment = fragment_thongke.class;
+        if (id == R.id.sub1)
+            classfragment = about.class;
 //        ....tao cac fragment cho tung muc
+        if(id==R.id.sub2){
+            finish();
+        }
 
         try {
             fragment = (Fragment) classfragment.newInstance();

@@ -5,6 +5,7 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 
+import com.example.tiendat.asmlayout.Model.Oloaichi;
 import com.example.tiendat.asmlayout.Model.Oloaithu;
 
 import java.util.ArrayList;
@@ -35,5 +36,16 @@ public class LoaithuDAO  {
             } while (c.moveToNext());
         }
         return lt;
+    }
+    public void xoa(int _id){
+        db=dbhelper.getWritableDatabase();
+        db.delete("loaithu","_id=?",new String[]{_id+""});
+    }
+    public void sua(Oloaithu oloaithu){
+        db=dbhelper.getWritableDatabase();
+        ContentValues values = new ContentValues();
+        values.put("loaithu",oloaithu.tenloaithu);
+        db.update("loaithu",values,"_id=?",new String []{oloaithu._id+""});
+
     }
 }

@@ -5,6 +5,7 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 
+import com.example.tiendat.asmlayout.Model.Okhoanchi;
 import com.example.tiendat.asmlayout.Model.Okhoanthu;
 
 import java.util.ArrayList;
@@ -37,6 +38,18 @@ public class KhoanthuDAO {
             } while (c.moveToNext());
         }
         return kt;
+    }
+    public void xoa(int _id){
+        db=dbhelper.getWritableDatabase();
+        db.delete("khoanthu","_id=?",new String[]{_id+""});
+    }
+    public void suakhoanthu(Okhoanthu okhoanthu){
+        db=dbhelper.getWritableDatabase();
+        ContentValues values = new ContentValues();
+        values.put("khoanthu",okhoanthu.tenkhoanthu);
+        values.put("loaithu",okhoanthu.loaithu);
+        values.put("_id",okhoanthu._id);
+        db.update("khoanthu",values,"_id=?",new String []{okhoanthu._id+""});
     }
 }
 

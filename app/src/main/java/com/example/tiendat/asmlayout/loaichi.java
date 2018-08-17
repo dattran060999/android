@@ -71,7 +71,7 @@ btn2.setOnClickListener(new View.OnClickListener() {
     public void capnhaths(){
        LoaichiDAO loaichiDAO = new LoaichiDAO(getActivity());
         lc=loaichiDAO.xemloaichi();
-        Adapter_loaichi adapter_loaichi = new Adapter_loaichi(getActivity(),lc);
+        Adapter_loaichi adapter_loaichi = new Adapter_loaichi(getActivity(),lc,loaichi.this);
         lview2.setAdapter(adapter_loaichi);
     }
 

@@ -79,7 +79,7 @@ return view;
     public void capnhaths(){
         KhoanchiDAO kcdao = new KhoanchiDAO(getActivity());
         kc=kcdao.xemkhoanchi();
-        Adapter_khoanchi adapter_khoanchi = new Adapter_khoanchi(getActivity(),kc);
+        Adapter_khoanchi adapter_khoanchi = new Adapter_khoanchi(getActivity(),kc,khoanchi.this);
         listView.setAdapter(adapter_khoanchi);
     }
 }

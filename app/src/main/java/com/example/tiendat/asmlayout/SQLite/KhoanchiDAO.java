@@ -41,11 +41,12 @@ public class KhoanchiDAO {
         db=dbhelper.getWritableDatabase();
         db.delete("khoanchi","_id=?",new String[]{_id+""});
     }
-//    public void sualophoc(Okhoanchi okhoanchi){
-//        db=dbhelper.getWritableDatabase();
-//        ContentValues values = new ContentValues();
-//        values.put("tenlop",okhoanchi.tenkhoanchi);
-//        db.update("lophoc",values,"_id=?",new String []{okhoanchi._id+""});
-//
-//    }
+    public void suakhoanchi(Okhoanchi okhoanchi){
+        db=dbhelper.getWritableDatabase();
+        ContentValues values = new ContentValues();
+        values.put("khoanchi",okhoanchi.tenkhoanchi);
+        values.put("loaichi",okhoanchi.loaichi);
+        values.put("_id",okhoanchi._id);
+        db.update("khoanchi",values,"_id=?",new String []{okhoanchi._id+""});
+    }
 }

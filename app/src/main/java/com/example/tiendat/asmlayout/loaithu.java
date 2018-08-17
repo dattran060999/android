@@ -74,7 +74,7 @@ public class loaithu extends Fragment {
     public void capnhaths(){
             LoaithuDAO loaichiDAO = new LoaithuDAO(getActivity());
             lt=loaichiDAO.xemloaithu();
-            Adapter_loaithu adapter_loaichi = new Adapter_loaithu(getActivity(),lt);
+            Adapter_loaithu adapter_loaichi = new Adapter_loaithu(getActivity(),lt,loaithu.this);
             lview3.setAdapter(adapter_loaichi);
         }
     }

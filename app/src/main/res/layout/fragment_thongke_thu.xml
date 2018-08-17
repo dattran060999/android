@@ -3,15 +3,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".fragment_thongke">
+    tools:context=".thongke_thu">
 
-    <android.support.design.widget.TabLayout
-        android:id="@+id/tabs2"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"></android.support.design.widget.TabLayout>
-    <android.support.v4.view.ViewPager
-        android:id="@+id/pager2"
+
+    <ListView
+        android:layout_marginTop="50dp"
+        android:id="@+id/listt"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
-
 </FrameLayout>

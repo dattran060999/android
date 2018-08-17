@@ -39,7 +39,7 @@ public class Fragment_Thu extends Fragment {
         tabv2.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
             @Override
             public void onTabSelected(TabLayout.Tab tab) {
-                viewpg2.setCurrentItem(tab.getPosition());
+                viewpg2.setCurrentItem(tabv2.getSelectedTabPosition());
             }
 
             @Override
